@@ -22,7 +22,7 @@ class TestStockReplenishmentMrpBomSelection(TransactionCase):
     def _create_product_template(cls, name):
         product_form = Form(cls.env["product.template"])
         product_form.name = name
-        product_form.is_storable = True
+        product_form.store_by = "quantity"
         return product_form.save()
 
     @classmethod
